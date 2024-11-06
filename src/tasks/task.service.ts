@@ -9,15 +9,15 @@ export interface User {
 @Injectable()
 export class TasksServices {
 
-    getTasks(): User {
-        return {
-            name: 'Oscar moreno',
-            age: 29
-        }
+    private tasks = []
+
+    getTasks() {
+        return this.tasks;
     }
 
-    createTask() {
-        return 'Creando tarea'
+    createTask(task: any) {
+        this.tasks.push(task)
+        return task
     }
 
     updateTask() {
